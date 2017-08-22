@@ -9,20 +9,20 @@ var NETWORKS = {
 //testnet: {symbol:"tbtc" , api:"blockr"},
 //bitcoin:{  symbol: "btc",api:"blockr"},
 //litecoin: { symbol: "ltc",api:"blockr"},
-auroracoin:{  symbol:'auroracoin',api:"aurinsight"}
+guptacoin:{  symbol:'guptacoin',api:"gptinsight"}
 }
 
 function CBAltcoins(network, proxyURL) {
-  network = network || 'auroracoin'
+  network = network || 'guptacoin'
   assert(network in NETWORKS, 'Unknown network: ' + network)
   var BASE_URL = ''
   if(NETWORKS[network].api==="blockr")
   {
   BASE_URL='https://' + NETWORKS[network].symbol + '.blockr.io/api/v1/'
-}else if(NETWORKS[network].api==="aurinsight")
+}else if(NETWORKS[network].api==="gptinsight")
 {
   //BASE_URL='http://insight.' + NETWORKS[network].symbol + '.io/api/'
-  BASE_URL='https://hiveinsight.auroracoin.is/api/'
+  BASE_URL='https://hiveinsight.guptacoin.com/api/'
 }
   // end points
   this.transactions = new Transactions(BASE_URL)
