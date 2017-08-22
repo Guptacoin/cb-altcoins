@@ -8,7 +8,7 @@ function Transactions(url) {
 Transactions.prototype.summary = function(txIds, callback) {
   var uri = this.url + "txs/"
 
-  utils.batchRequest(uri, txIds, {params: ["output=aurorawallet"]}, function(err, data) {
+  utils.batchRequest(uri, txIds, {params: ["output=guptawallet"]}, function(err, data) {
     if(err) return callback(err)
 
     var results = data.map(function(d) {
@@ -40,7 +40,7 @@ Transactions.prototype.get = function(txIds, callback) {
   var uri = this.url + "rawtxs/"
 
   var queryTxIds = [].concat(txIds)
-  utils.batchRequest(uri, queryTxIds, {params: ["output=aurorawallet"]}, function(err, data) {
+  utils.batchRequest(uri, queryTxIds, {params: ["output=guptawallet"]}, function(err, data) {
     if (err) return callback(err)
 
     var results = data.map(function(d, i) {
